@@ -402,15 +402,6 @@ require('lazy').setup({
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           -- },
-          layout_strategy = 'vertical',
-          layout_config = {
-            vertical = {
-              width = 0.9,
-              height = 0.9,
-              preview_height = 0.6,
-              preview_cutoff = 0,
-            },
-          },
         },
         -- pickers = {}
         extensions = {
@@ -672,11 +663,7 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        clangd = {
-          capabilities = {
-            offsetEncoding = { 'utf-16' }, -- Match Copilot's encoding
-          },
-        },
+        clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -894,7 +881,6 @@ require('lazy').setup({
             group_index = 0,
           },
           { name = 'nvim_lsp' },
-          { name = 'copilot' },
           { name = 'luasnip' },
           { name = 'path' },
           { name = 'nvim_lsp_signature_help' },
@@ -921,7 +907,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-day'
+      vim.cmd.colorscheme 'tokyonight-storm'
     end,
   },
 
